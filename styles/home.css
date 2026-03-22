@@ -1,0 +1,113 @@
+/* -------------------- */
+/* HOME                 */
+/* -------------------- */
+
+/* HERO */
+
+.hero {
+  min-height: 420px;
+  background-image: linear-gradient(rgba(74, 77, 34, 0.288), rgba(18, 20, 18, 0.76)),
+    url("../img/what-is-a-vegan-diet.jpg");
+  background-size: cover;
+  background-position: center;
+  color: var(--color-text-inverse);
+
+  display: grid;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  max-width: 650px;
+  font-size: 1.1rem;
+}
+
+/* FEATURED MEALS */
+
+.featured-meals {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.section-heading {
+  margin-bottom: 2rem;
+}
+
+.section-heading h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-heading p {
+  color: #555;
+}
+
+.meal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.meal-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.meal-card-content {
+  padding: 1rem;
+}
+
+.meal-card-content h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.meal-card-content p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/*---------------------------------------------------------------------------------------------------------------*/
+
+/* -------------------- */
+/* RESPONSIVE           */
+/* -------------------- */
+
+@media (max-width: 900px) {
+  .meal-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .meal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 320px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}

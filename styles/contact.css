@@ -1,0 +1,304 @@
+* {
+  /* outline: rgb(73, 206, 216) dashed 1px;   */
+}
+
+
+/* CONTACT HERO         */
+
+.contact-hero {
+  min-height: 400px;
+  background-image:
+    linear-gradient(rgba(66, 68, 67, 0.164), rgba(12, 29, 12, 0.637)),
+    url("../img/farm_field.jpg");
+  background-size: cover;
+  background-position: bottom;
+  color: var(--color-text-inverse);
+
+  display: grid;
+  align-items: center;
+}
+
+.contact-hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.contact-hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.contact-hero-content p {
+  max-width: 700px;
+  font-size: 1.05rem;
+}
+
+
+/* CONTACT SECTION      */
+
+.contact-section {
+  background-color: var(--color-bg);
+  padding: 3rem 1.5rem 4rem;
+}
+
+.contact-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-intro h2 {
+  font-size: 2rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.contact-intro p {
+  color: var(--color-text-light);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+/* FORM CARD            */
+
+.contact-form {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 2rem;
+}
+
+
+/* FIELDSET / RADIOS    */
+
+.contact-type-group {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-type-group legend {
+  font-weight: bold;
+  color: var(--color-text);
+  padding: 0 0.5rem;
+}
+
+.contact-type-group label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 1.5rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.contact-type-group input[type="radio"] {
+  accent-color: var(--color-primary);
+}
+
+
+/* FORM LAYOUT          */
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+
+/* INPUTS               */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--color-text);
+  background-color: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-text-light);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-light);
+  box-shadow: 0 0 0 3px rgba(102, 187, 106, 0.18);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+
+/* CHECKBOX             */
+
+.checkbox-group {
+  /* margin-top: 0.25rem; */
+  display: flex;
+  justify-content: flex-end; /* pushes whole thing right */
+}
+
+.checkbox-group label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; /* controls spacing between checkbox + text */
+  cursor: pointer;
+}
+
+
+/* .checkbox-group {
+ margin-top: 0.25rem; 
+} */
+
+/* .checkbox-group label {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-weight: normal;
+  line-height: 1.4;
+  cursor: pointer;
+} */
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+  flex: 0 0 auto;
+  margin: 0.2rem 0 0 0;
+  accent-color: var(--color-primary);
+}
+
+
+/* BUTTONS / ACTIONS    */
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.secondary-button {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--color-primary-dark);
+  border: 1px solid var(--color-primary-dark);
+  text-decoration: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.secondary-button:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-inverse);
+}
+
+
+/* FEEDBACK MESSAGE     */
+
+.form-feedback {
+  min-height: 1.5rem;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Optional future states */
+.form-feedback.success {
+  color: var(--color-success);
+}
+
+.form-feedback.error {
+  color: var(--color-error);
+}
+
+
+/*--RESPONSIVE--------------------------------------------------------------------------------------------------------------------------------*/
+
+@media (max-width: 768px) {
+  .contact-hero {
+    min-height: 220px;
+  }
+
+  .contact-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-bottom: 0;
+  }
+
+  .contact-type-group label {
+    display: flex;
+    margin-right: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .primary-button,
+  .form-actions .secondary-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .contact-hero-content {
+    padding: 2rem 1rem;
+  }
+
+  .contact-hero-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .contact-intro h2 {
+    font-size: 1.6rem;
+  }
+
+  .contact-form {
+    padding: 1.25rem;
+  }
+}

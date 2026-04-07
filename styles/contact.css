@@ -64,6 +64,10 @@
   margin: 0 auto;
 }
 
+.required-text {
+  color: red;
+}
+
 
 /* FORM CARD            */
 

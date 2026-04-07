@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Scheduling </title>
+    <link rel="stylesheet" href="scheduling.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+    
+    <!--NAVBAR-->
+    <header class="navbar">
+      <div class="nav-container">
+        <!-- LEFT: Logo -->
+        <div class="nav-logo">
+          <!-- Optional image -->
+          <!-- <img src="images/logo.png" alt="Company Logo"> -->
+          <a href="index.html" class="logo-text">🥕 VeggieTable</a>
+        </div>
+        <!-- RIGHT: Navigation Links -->
+        <nav class="nav-links">
+          <a href="ordering.html">Plans</a>
+          <a href="customization.html">Menu</a>
+          <a href="contact.html">Contact</a>
+          <!-- Account Icon -->
+          <a href="#" class="account-icon" title="Sign In">
+            <i class="fa-solid fa-user"></i>
+          </a>
+          <!-- Cart Icon -->
+          <a href="checkout.html" class="cart-icon" title="View Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!--SCHEDULING PAGE CONTENT-->
+    <main>
+      <!--PAGE CONTAINER-->
+      <div id="container_section1_2_3">
+            <div id="container_section1_2">
+                <!--SHIPPING INPUT FIELDS-->
+                <div id="section1">
+                    <h2 class="header">Shipping Details</h2>
+                    <div class="shipping_details">
+                        <p class="subheader">Street Address</p>
+                        <input class="input_field" type="text" id="input_address">
+                        <p class="input_error"></p>
+                        <p class="subheader">Apartment Number, Floor, Etc. (Optional)</p>
+                        <input class="input_field" type="text" id="input_addressoptional">
+                        <p class="input_error"></p>
+                        <p class="subheader">City</p>
+                        <input class="input_field" type="text" id="input_city">
+                        <p class="input_error"></p>
+                        <p class="subheader">Province</p>
+                        <input class="input_field" type="text" id="input_province">
+                        <p class="input_error"></p>
+                        <p class="subheader">Postal Code</p>
+                        <input class="input_field" type="text" id="input_postal">
+                        <p class="input_error"> </p>
+                        <input type="button" value="Confirm Shipping Details" id="confirm_shipping">
+                    </div>
+                </div>
+                <!--DELIVERY INPUT FIELDS-->
+                <div id="section2">
+                    <h2>Delivery Timing</h2>
+                    <p class="subheader">Date</p>
+                    <input id="date_value" type="date">
+                    <p class="time_error"> </p>
+                    <p class="subheader">Time</p>
+                    <input id="time_value" type="time" step="1800">
+                    <p class="time_error"> </p>
+                    <input type="button" value="Confirm Delivery Timing" id="confirm_timing">
+                </div>
+            </div>
+            <!--ORDER SUMMARY-->
+            <div id="container_section3">
+                <h1 id="order_summary">Your Order Summary</h1>
+                <div id="container_media">
+                    <img id="shipping_img" width="360" src="scheduling_assets/DG8002_MapAnim_Time_0.png">
+                </div>
+                <hi class="subheader">Delivery Location:</hi>
+                <p id="confirmed_shipping_details_1"> </p>
+                <p id="confirmed_shipping_details_2"> </p>
+                <h1 class="subheader"> Delivery Timing:</h1>
+                <p id="confirmed_delivery_timing"> </p>
+                <input type="button" value="Confirm Order & Pay" id="confirm_order">
+            </div>
+       </div>
+    </main>
+
+    <!--FOOTER-->
+    <footer class="site-footer">
+      <p>&copy; 2026 VeggieTable. All rights reserved.</p>
+    </footer>
+
+  <script>
+    // SHIPPING ANIMATION & CONFIRMATION TRIGGER
+    var confirm_shipping=document.querySelector("#confirm_shipping");
+    confirm_shipping.addEventListener("click", shippinganim);
+    confirm_shipping.addEventListener("mouseover", buttonhover);
+    confirm_shipping.addEventListener("mouseout", buttonoff);
+        
+    // SHIPPING ANIMATION VARIABLES
+    var container_media=document.querySelector("#container_media")
+    var shipping_img=document.querySelector("#shipping_img");
+    const videoSrc="scheduling_assets/DG8002_MapAnim_1.mp4"
+    const finalImgSrc="DG8002_MapAnim_Time_114.png"
+
+    // SHIPPING CONFIRMATION VARIABLES
+    var confirmed_shipping_details_1=document.querySelector("#confirmed_shipping_details_1");
+    var confirmed_shipping_details_2=document.querySelector("#confirmed_shipping_details_2");
+    var input_address=document.querySelector("#input_address");
+    var input_addressoptional=document.querySelector("#input_addressoptional");
+    var input_city=document.querySelector("#input_city");
+    var input_province=document.querySelector("#input_province");
+    var input_postal=document.querySelector("#input_postal");
+
+    // DELIVERY TIMING CONFIRMATION TRIGGER & VARIABLES
+    var confirm_timing=document.querySelector("#confirm_timing");
+    confirm_timing.addEventListener("click", timingconfirm);
+    confirm_timing.addEventListener("mouseover", buttonhover);
+    confirm_timing.addEventListener("mouseout", buttonoff);
+    var date_value=document.querySelector("#date_value");
+    var time_value=document.querySelector("#time_value");
+    var confirmed_delivery_timing=document.querySelector("#confirmed_delivery_timing");
+
+    // FINAL CONFIRMATION VARIABLES
+    var shippingfinalized=false;
+    var timingfinalized=false;
+    var confirm_order=document.querySelector("#confirm_order");
+
+    // NEXT PAGE VARIABLES
+    var confirm_order=document.querySelector("#confirm_order");
+    confirm_order.addEventListener("click", paymentpage);
+    confirm_order.addEventListener("mouseover", payhover);
+    confirm_order.addEventListener("mouseout", payoff);
+
+
+    function shippinganim(){
+        if(!input_address.value){
+            input_address.nextElementSibling.textContent="Please provide a valid address";
+        } else{
+            input_address.nextElementSibling.textContent="";
+        }
+        if(!input_city.value){
+            input_city.nextElementSibling.textContent="Please provide a valid city";
+        } else{
+            input_city.nextElementSibling.textContent="";
+        }
+        if(!input_province.value){
+            input_province.nextElementSibling.textContent="Please provide a valid province";
+        } else{
+            input_province.nextElementSibling.textContent="";
+        }
+        if(!input_postal.value){
+            input_postal.nextElementSibling.textContent="Please provide a valid address";
+        } else{
+            input_postal.nextElementSibling.textContent="";
+        }
+        if(input_address.value && input_city.value && input_province.value && input_postal.value){
+            confirmed_shipping_details_1.textContent=input_address.value + ", " + input_addressoptional.value;
+            confirmed_shipping_details_2.textContent=input_city.value + ", " + input_province.value + ", " + input_postal.value;
+            var video=document.createElement("video");
+            video.autoplay=true;
+            video.muted=true;
+            video.controls=false;
+            video.src=videoSrc;
+            video.width=350;
+            video.height=350;
+            if(shippingfinalized==false){
+                container_media.replaceChild(video, shipping_img);
+            }
+            shippingfinalized=true
+            checkALLfinal()  
+        }
+    }
+    function timingconfirm(){
+        if(date_value.value && time_value.value){
+            confirmed_delivery_timing.textContent=date_value.value + " at " + time_value.value
+            timingfinalized=true
+            checkALLfinal()
+        } else{
+            date_value.nextElementSibling.textContent="Please select a date"
+            time_value.nextElementSibling.textContent="Please select a time"
+        }
+    }
+    function checkALLfinal(){
+        if (shippingfinalized && timingfinalized) {
+            confirm_order.style.display = "block";
+        }        
+    }
+    function paymentpage(){
+        window.location.href="checkout.html"
+    }
+    function buttonhover(){
+      this.style.backgroundColor="#244F3D";
+    }
+    function buttonoff(){
+      this.style.backgroundColor="#2d6a4f";
+    }
+    function payhover(){
+      this.style.backgroundColor="#c96d2e";
+    }
+    function payoff(){
+      this.style.backgroundColor="#e07b39";
+    }
+  </script>
+  
+  </body>
+
+</html>

@@ -1,0 +1,236 @@
+/* -------------------- */
+/* SCHEDULING CSS STYLE */
+/* -------------------- */
+
+/* ========================
+     VARIABLES & RESET
+     ======================== */
+
+  :root {
+    --green-dark:  #2d6a4f;
+    --green-mid:   #40916c;
+    --green-light: #74c69d;
+    --green-pale:  #d8f3dc;
+    --cream:       #fdfaf4;
+    --text-dark:   #1a2e1e;
+    --text-mid:    #3d5a42;
+    --text-light:  #6b8f71;
+    --white:       #ffffff;
+    --orange:      #e07b39;
+    --red:         #c0392b;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Georgia, serif;
+    background-color: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* ========================
+     NAVBAR
+     ======================== */
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--cream);
+    border-bottom: 1px solid var(--green-pale);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logo-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--green-dark);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--text-mid);
+    font-size: 0.95rem;
+  }
+
+  .nav-links a:hover {
+    color: var(--green-dark);
+  }
+
+/* ========================
+ SCHEDULING PAGE CONTAINER
+======================== */
+    #container_section1_2_3 {
+        display: flex;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-top: 2rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-top: 2rem;
+        gap: 10rem;
+    }
+    #container_section1_2 {
+        padding: 20px;
+    }
+    #container_section3 {
+        padding: 20px;
+    }
+    #confirm_order{
+        display: none;
+    }
+
+/* ========================
+ SHIPPING & TIMING FIELDS
+======================== */
+    #container_section1_2 {
+        align-items: center;
+        gap: 3rem;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 0.25rem;
+    }
+    #section1{
+        border: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 1rem;
+        padding-top: 0rem;
+    }
+    #section2{
+        border: 1rem;
+        padding: 1rem;
+    }
+    #confirm_shipping{
+        width: 15rem;
+        height: 3rem;
+        border-radius: 0.25rem;
+        font-size: 16px;
+        font-weight:bold;
+        font-family: Georgia, serif;
+        color: var(--cream);
+        background-color: #2d6a4f;
+        border:#40916c solid;
+    }
+    #confirm_timing{
+        width: 15rem;
+        height: 3rem;
+        border-radius: 0.25rem;
+        font-size: 16px;
+        font-weight:bold;
+        font-family: Georgia, serif;
+        color: var(--cream);
+        background-color: #2d6a4f;
+        border:#40916c solid;
+    }
+    #date_value{
+        font-size: 16px;
+        padding:0.25rem;
+    }
+    #time_value{
+        font-size: 16px;
+        padding:0.25rem;
+    }
+    .header{
+        border: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    .subheader {
+        font-size: 16px;
+        font-weight: bold;
+        padding-bottom: 0.25rem;
+    }
+    .input_field{
+        border:#40916c solid; 
+        font-size: 16px;
+        width: 25rem;
+        height: 2rem;
+        padding-left: 0.5rem;
+        border-radius: 0.25rem;
+    }
+    .input_error{
+        padding: 0.5rem;
+        color: #c0392b;
+        font-weight: bold;
+    }
+    .time_error{
+        padding: 0.5rem;
+        color: #c0392b;
+        font-weight: bold; 
+    }
+
+/* ========================
+ ORDER SUMMMARY
+======================== */
+    #container_section3{
+        align-items: left;
+        height: fit-content;
+        gap: 3rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 1rem;
+        background-color:#74c69d17;
+        border:#40916c solid 3px;
+        border-radius: 0.5rem;
+    }
+    #order_summary{
+        color: var(--green-dark);
+        padding-top:0.25rem;
+        padding-bottom:0.5rem;
+    }
+    #confirm_order{
+        width: 15rem;
+        height: 3rem;
+        margin-top: 1rem;
+        border-radius: 0.25rem;
+        font-size: 16px;
+        font-weight:bold;
+        font-family: Georgia, serif;
+        color: var(--cream);
+        background-color: var(--orange);
+        border:var(--orange) solid;
+    }
+    #confirmed_shipping_details_1{
+        font-size: 18px;
+    }
+    #confirmed_shipping_details_2{
+        font-size: 18px;
+    }
+
+    /* ========================
+     FOOTER
+======================== */
+
+  .site-footer {
+    padding: 1.5rem;
+    text-align: center;
+    background-color: var(--text-dark);
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+    margin-top: 3rem;
+  }

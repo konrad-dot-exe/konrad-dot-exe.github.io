@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>Your Orders </title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="orders.css">  
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/orders.css">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
       body {
@@ -16,16 +16,23 @@
   </head>
   <body>
     
-<header class="navbar" id="navbar">
-    <a href="index.html" class="logo">🥕 VeggieTable</a>
-    <nav>
-      <a href="ordering.html">Plans</a>
-      <a href="customization.html">Menu</a>
-      <a href="contact.html">Contact</a>
-      <a href="order-history.html" title="Account"><i class="fa-solid fa-user"></i></a>
-      <a href="checkout.html" class="cart-icon" title="View Cart"><i class="fa-solid fa-cart-shopping"></i></a>
-    </nav>
-  </header>
+<!-- NAVBAR -->
+      <header class="navbar" id="navbar">
+        <a href="index.html" class="logo">🥕 VeggieTable</a>
+        <nav>
+          <a href="index.html">Plans</a>
+          <a href="menu.html">Menu</a>
+          <a href="contact.html">Contact</a>
+          <!-- Account Icon -->
+          <a href="login.html" class="account-icon" title="Sign In">
+            <i class="fa-solid fa-user"></i>
+          </a>
+          <!-- Cart Icon -->
+          <a href="checkout.html" class="cart-icon" title="Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </nav>
+      </header>
 
 <main class="account-container">
     
@@ -187,6 +194,7 @@
 
   </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
       <p>&copy; 2026 VeggieTable. All rights reserved.</p>
     </footer>

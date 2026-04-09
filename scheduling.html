@@ -2,36 +2,29 @@
 <html>
   <head>
     <title> Scheduling </title>
-    <link rel="stylesheet" href="scheduling.css"> 
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/scheduling.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
   <body>
     
-    <!--NAVBAR-->
-    <header class="navbar">
-      <div class="nav-container">
-        <!-- LEFT: Logo -->
-        <div class="nav-logo">
-          <!-- Optional image -->
-          <!-- <img src="images/logo.png" alt="Company Logo"> -->
-          <a href="index.html" class="logo-text">🥕 VeggieTable</a>
-        </div>
-        <!-- RIGHT: Navigation Links -->
-        <nav class="nav-links">
-          <a href="ordering.html">Plans</a>
-          <a href="customization.html">Menu</a>
+    <!-- NAVBAR -->
+      <header class="navbar" id="navbar">
+        <a href="index.html" class="logo">🥕 VeggieTable</a>
+        <nav>
+          <a href="index.html">Plans</a>
+          <a href="menu.html">Menu</a>
           <a href="contact.html">Contact</a>
           <!-- Account Icon -->
-          <a href="#" class="account-icon" title="Sign In">
+          <a href="login.html" class="account-icon" title="Sign In">
             <i class="fa-solid fa-user"></i>
           </a>
           <!-- Cart Icon -->
-          <a href="checkout.html" class="cart-icon" title="View Cart">
+          <a href="checkout.html" class="cart-icon" title="Cart">
             <i class="fa-solid fa-cart-shopping"></i>
           </a>
         </nav>
-      </div>
-    </header>
+      </header>
 
     <!--SCHEDULING PAGE CONTENT-->
     <main>
@@ -76,7 +69,7 @@
             <div id="container_section3">
                 <h1 id="order_summary">Your Order Summary</h1>
                 <div id="container_media">
-                    <img id="shipping_img" width="360" src="scheduling_assets/DG8002_MapAnim_Time_0.png">
+                    <img id="shipping_img" width="360" src="img/DG8002_MapAnim_Time_0.png">
                 </div>
                 <hi class="subheader">Delivery Location:</hi>
                 <p id="confirmed_shipping_details_1"> </p>
@@ -88,10 +81,10 @@
        </div>
     </main>
 
-    <!--FOOTER-->
-    <footer class="site-footer">
-      <p>&copy; 2026 VeggieTable. All rights reserved.</p>
-    </footer>
+    <!-- FOOTER -->
+      <footer class="footer">
+        <p>&copy; 2026 VeggieTable. All rights reserved.</p>
+      </footer>
 
   <script>
     // SHIPPING ANIMATION & CONFIRMATION TRIGGER

@@ -1,14 +1,30 @@
-* {
-  /* outline: rgb(73, 206, 216) dashed 1px;   */
+:root {
+
+  --color-surface: #ffffff;       
+  --color-border: #e0e0e0; 
+
+  --color-text: #1f2933;          
+  --color-text-light: #6b7280;    
+  --color-text-inverse: #ffffff;   
+
 }
 
+.hidden {
+  display: none !important;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 /* CONTACT HERO         */
 
 .contact-hero {
   min-height: 400px;
   background-image:
-    linear-gradient(rgba(66, 68, 67, 0.164), rgba(12, 29, 12, 0.637)),
+    linear-gradient(rgba(66, 68, 67, 0.2), rgba(12, 29, 12, 0.8)),
     url("../img/farm_field.jpg");
   background-size: cover;
   background-position: bottom;
@@ -22,6 +38,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2.5rem 1.5rem;
+  color: var(--cream);
 }
 
 .contact-hero-content h1 {
@@ -38,7 +55,6 @@
 /* CONTACT SECTION      */
 
 .contact-section {
-  background-color: var(--color-bg);
   padding: 3rem 1.5rem 4rem;
 }
 
@@ -166,12 +182,6 @@
 
 /* CHECKBOX             */
 
-.checkbox-group {
-  /* margin-top: 0.25rem; */
-  display: flex;
-  justify-content: flex-end; /* pushes whole thing right */
-}
-
 .checkbox-group label {
   display: inline-flex;
   align-items: center;
@@ -179,19 +189,9 @@
   cursor: pointer;
 }
 
-
-/* .checkbox-group {
- margin-top: 0.25rem; 
-} */
-
-/* .checkbox-group label {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 0.65rem;
-  font-weight: normal;
-  line-height: 1.4;
-  cursor: pointer;
-} */
+.required-text {
+  color:#e53935;
+}
 
 .checkbox-group input[type="checkbox"] {
   width: auto;
@@ -209,22 +209,27 @@
   margin-top: 1rem;
 }
 
-.secondary-button {
+.gallery-button-wrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.btn-secondary {
   display: inline-block;
   background-color: transparent;
-  color: var(--color-primary-dark);
-  border: 1px solid var(--color-primary-dark);
+  color: var(--green-dark);
+  border: 1px solid var(--green-dark);
   text-decoration: none;
   padding: 0.9rem 1.5rem;
-  border-radius: var(--radius-sm);
+  border-radius: 8px;
   font: inherit;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.secondary-button:hover {
-  background-color: var(--color-primary-dark);
-  color: var(--color-text-inverse);
+.btn-secondary:hover {
+  color: var(--green-light);
+  border: 1px solid var(--green-light);
 }
 
 
@@ -233,19 +238,39 @@
 .form-feedback {
   min-height: 1.5rem;
   margin-top: 1rem;
-  font-weight: 600;
   color: var(--color-text);
 }
 
-/* Optional future states */
-.form-feedback.success {
-  color: var(--color-success);
+/* SUCCESS MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
 }
 
-.form-feedback.error {
-  color: var(--color-error);
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: min(500px, 90%);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
 }
 
+.modal-content h2 {
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
 
 /*--RESPONSIVE--------------------------------------------------------------------------------------------------------------------------------*/
 

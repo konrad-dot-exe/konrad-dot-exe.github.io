@@ -1,0 +1,611 @@
+  /* ========================
+       VARIABLES & RESET
+       ======================== */
+
+    :root {
+      --green-dark:  #2d6a4f;
+      --green-mid:   #40916c;
+      --green-light: #74c69d;
+      --green-pale:  #d8f3dc;
+      --cream:       #fdfaf4;
+      --text-dark:   #1a2e1e;
+      --text-mid:    #3d5a42;
+      --text-light:  #6b8f71;
+      --white:       #ffffff;
+      --orange:      #e07b39;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+
+
+    /* ========================
+       NAVBAR
+       ======================== */
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: var(--cream);
+      border-bottom: 1px solid var(--green-pale);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: var(--green-dark);
+    }
+
+    .navbar nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .navbar nav a {
+      color: var(--text-mid);
+      font-size: 0.95rem;
+    }
+
+    .navbar nav a:hover {
+      color: var(--green-dark);
+    }
+
+    .cart-icon {
+      font-size: 1.1rem;
+    }
+
+
+    /* ========================
+       BUTTONS
+       ======================== */
+
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--green-dark);
+      color: var(--white);
+      padding: 0.75rem 1.8rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: Georgia, serif;
+      cursor: pointer;
+      border: 2px solid var(--green-dark);
+      transition: background-color 0.2s;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--green-mid);
+      border-color: var(--green-mid);
+    }
+
+    .btn-primary.large {
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background-color: transparent;
+      color: var(--green-dark);
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
+      border: 2px solid var(--green-dark);
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      transition: background-color 0.2s;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--green-pale);
+    }
+
+
+    /* ========================
+       HERO
+       ======================== */
+
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      padding: 5rem 4rem;
+      background-color: var(--cream);
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .hero-text h1 em {
+      color: var(--green-dark);
+      font-style: italic;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      color: var(--text-mid);
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+
+    .hero-image {
+      flex: 1;
+    }
+
+    .hero-image img {
+      border-radius: 16px;
+      max-height: 420px;
+      object-fit: cover;
+    }
+
+
+    /* ========================
+       HOW IT WORKS
+       ======================== */
+
+    .how-it-works {
+      padding: 5rem 4rem;
+      background-color: var(--white);
+      text-align: center;
+    }
+
+    .steps {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .step {
+      flex: 1;
+      max-width: 280px;
+      padding: 2rem;
+      background-color: var(--cream);
+      border-radius: 12px;
+      border: 1px solid var(--green-pale);
+    }
+
+    .step-icon {
+      font-size: 1.8rem;
+      color: var(--green-dark);
+      margin-bottom: 1rem;
+    }
+
+    .step h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .step p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+    }
+
+
+    /* ========================
+       KEY FEATURES
+       ======================== */
+
+    .features {
+      padding: 5rem 4rem;
+      background-color: var(--cream);
+      text-align: center;
+    }
+
+    .feature-cards {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .feature-card {
+      flex: 1;
+      max-width: 300px;
+      padding: 2rem;
+      background-color: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--green-pale);
+    }
+
+    .feature-icon {
+      font-size: 1.8rem;
+      color: var(--green-dark);
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .feature-card p {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+    }
+
+
+    /* ========================
+       MEALS PREVIEW
+       ======================== */
+
+    .meals-preview {
+      padding: 5rem 4rem;
+      background-color: var(--white);
+      text-align: center;
+    }
+
+    /* ========================
+       MENU PAGE HEADER
+       ======================== */
+
+    .menu-header {
+      padding: 4rem 4rem 1rem 4rem;
+      text-align: center;
+      background-color: var(--cream);
+    }
+
+    .menu-header h1 {
+      font-size: 2.4rem;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .meal-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .meal-card {
+      background-color: var(--cream);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--green-pale);
+      text-align: left;
+    }
+
+    .meal-card.hidden-meal {
+      display: none !important;
+    }
+
+    .meal-card.hidden-meal.show-meal {
+      display: flex !important;
+    }
+
+    .meal-card img {
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .meal-info {
+      padding: 1rem;
+    }
+
+    .meal-info h3 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: var(--text-dark);
+    }
+
+    .meal-info p {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      margin-bottom: 0.6rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: var(--green-pale);
+      color: var(--green-dark);
+      font-size: 0.8rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+    }
+
+    /* ========================
+       MENU + MODIFIERS + HIDDEN MENU POP-UP PREVIEW
+       ======================== */
+
+    .hidden {
+      display: none;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 999;
+    }
+
+    .modal-overlay.hidden {
+      display: none;
+    }
+
+    .modifier-modal {
+      background: var(--white);
+      width: 100%;
+      max-width: 520px;
+      border-radius: 14px;
+      padding: 1.5rem;
+      position: relative;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+    }
+
+    .hidden-meal {
+      display: none;
+    }
+
+    .hidden-meal.show-meal {
+      display: block;
+    }
+
+    .menu-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .meal-price {
+      font-weight: bold;
+      color: var(--green-dark);
+      margin-bottom: 0.8rem;
+    }
+
+    .select-btn {
+      padding: 6px 16px;
+      border: 2px solid var(--green-dark);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--green-dark);
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .select-btn:hover {
+      background-color: var(--green-dark);
+      color: var(--white);
+    }
+
+    .meal-tag-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 8px;
+    }
+
+    .meal-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meal-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .meal-info p {
+      flex: 1;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      border: none;
+      background: transparent;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--text-mid);
+    }
+
+    .modifier-group {
+      margin-top: 1.25rem;
+      text-align: left;
+    }
+
+    .modifier-group h4 {
+      margin-bottom: 0.6rem;
+      color: var(--green-dark);
+    }
+
+    .modifier-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--text-mid);
+    }
+
+    .qty-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.3rem;
+    }
+
+    .qty-row button {
+      background: var(--green-dark);
+      color: var(--white);
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .modal-footer {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .modal-total {
+      color: var(--text-dark);
+    }
+
+    @media (max-width: 700px) {
+      .meal-tag-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .modal-footer {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+
+
+    /* ========================
+       TRUST
+       ======================== */
+
+    .trust {
+      padding: 4rem 4rem;
+      background-color: var(--green-pale);
+      text-align: center;
+    }
+
+    .trust-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+    }
+
+    .author {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+    }
+
+
+    /* ========================
+       FINAL CTA
+       ======================== */
+
+    .final-cta {
+      padding: 5rem 4rem;
+      background-color: var(--green-dark);
+      text-align: center;
+      color: var(--white);
+    }
+
+    .final-cta h2 {
+      color: var(--white);
+      font-size: 2.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .final-cta p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 2rem;
+    }
+
+    .final-cta .btn-primary {
+      background-color: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .final-cta .btn-primary:hover {
+      background-color: #c96d2e;
+      border-color: #c96d2e;
+    }
+
+
+    /* ========================
+       FOOTER
+       ======================== */
+
+    .footer {
+      padding: 1.5rem;
+      text-align: center;
+      background-color: var(--text-dark);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+    }
+
+
+    /* ========================
+       RESPONSIVE
+       ======================== */
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+      .hero-text p { max-width: 100%; }
+      .steps { flex-direction: column; align-items: center; }
+      .feature-cards { flex-direction: column; align-items: center; }
+      .meal-grid { grid-template-columns: repeat(2, 1fr); }
+      .menu-header { padding: 3rem 2rem 1rem 2rem; }
+    }
+
+    @media (max-width: 500px) {
+      .meal-grid { grid-template-columns: 1fr; }
+      .how-it-works, .features, .meals-preview, .trust, .final-cta { padding: 3rem 1.5rem; }
+    }

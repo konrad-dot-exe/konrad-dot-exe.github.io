@@ -1,95 +1,275 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title> VeggieTable </title>
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  </head>
-  <body>
-    
-    <header class="navbar">
-      <div class="nav-container">
-        <!-- LEFT: Logo -->
-        <div class="nav-logo">
-          <!-- Optional image -->
-          <!-- <img src="images/logo.png" alt="Company Logo"> -->
-          <a href="index.html" class="logo-text">🥕 VeggieTable</a>
-        </div>
-        <!-- RIGHT: Navigation Links -->
-        <nav class="nav-links">
-          <a href="ordering.html">Plans</a>
-          <a href="customization.html">Menu</a>
+  <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>VeggieTable</title>
+      <link rel="stylesheet" href="styles/global.css">
+      <link rel="stylesheet" href="styles/index.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
+    <body>
+
+      <!-- NAVBAR -->
+      <header class="navbar" id="navbar">
+        <a href="index.html" class="logo">🥕 VeggieTable</a>
+        <nav>
+          <a href="index.html">Plans</a>
+          <a href="menu.html">Menu</a>
           <a href="contact.html">Contact</a>
           <!-- Account Icon -->
-          <a href="#" class="account-icon" title="Sign In">
+          <a href="login.html" class="account-icon" title="Sign In">
             <i class="fa-solid fa-user"></i>
           </a>
           <!-- Cart Icon -->
-          <a href="checkout.html" class="cart-icon" title="View Cart">
+          <a href="checkout.html" class="cart-icon" title="Cart">
             <i class="fa-solid fa-cart-shopping"></i>
           </a>
         </nav>
-      </div>
-    </header>
+      </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero-content">
-          <h1>Fresh meals, ready when you are.</h1>
-          <p>
-            Discover delicious vegetarian meal kits inspired by a variety of cuisines,
-            with convenient ordering and delivery built around your schedule.
-          </p>
+
+      <!-- 1. HERO -->
+      <section class="hero" id="hero">
+        <div class="hero-text">
+          <h1>Fresh vegetarian meals, <em>your way.</em></h1>
+          <p>VeggieTable sends you the ingredients and recipes to cook simple
+             plant-based meals at home, delivered on your schedule, no guesswork needed.</p>
+          <a href="ordering.html" class="btn-primary" id="hero-btn">Start Planning</a>
+        </div>
+        <div class="hero-image">
+          <img src="img/landing.jpeg" alt="A fresh vegetarian meal" id="hero-img">
         </div>
       </section>
 
-      <section class="featured-meals">
-        <div class="section-heading">
-          <h2>Featured Meals</h2>
-          <p>A few popular dishes to get started.</p>
+
+      <!-- 2. HOW IT WORKS -->
+      <section class="how-it-works" id="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+
+          <div class="step" id="step1">
+            <div class="step-icon"><i class="fa-solid fa-utensils"></i></div>
+            <h3>1. Choose Your Meals</h3>
+            <p>Browse our weekly menu and pick the dishes that sound good to you.</p>
+          </div>
+
+          <div class="step" id="step2">
+            <div class="step-icon"><i class="fa-solid fa-sliders"></i></div>
+            <h3>2. Customize</h3>
+            <p>Swap ingredients, adjust serving sizes, and tailor each meal to your taste.</p>
+          </div>
+
+          <div class="step" id="step3">
+            <div class="step-icon"><i class="fa-solid fa-calendar-days"></i></div>
+            <h3>3. Schedule Delivery</h3>
+            <p>Pick a delivery day that works for you. We bring everything fresh to your door.</p>
+          </div>
+
         </div>
+      </section>
+
+
+      <!-- 3. KEY FEATURES -->
+      <section class="features" id="features">
+        <h2>What We Offer</h2>
+        <div class="feature-cards">
+
+          <div class="feature-card" id="feature1">
+            <div class="feature-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+            <h3>Customize Your Meals</h3>
+            <p>Every dish can be tailored. Choose your proteins, swap sides, and remove anything you don't like.</p>
+            <a href="menu.html" class="btn-outline">Build Your Meal</a>
+          </div>
+
+          <div class="feature-card" id="feature2">
+            <div class="feature-icon"><i class="fa-solid fa-truck"></i></div>
+            <h3>Schedule Delivery</h3>
+            <p>Pick the day and time that fits your week. Change or pause your delivery anytime.</p>
+            <a href="scheduling.html" class="btn-outline">Set Schedule</a>
+          </div>
+
+          <div class="feature-card" id="feature3">
+            <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
+            <h3>Flexible Plans</h3>
+            <p>From 2 meals a week to a full family plan — choose what fits your lifestyle and budget.</p>
+            <a href="index.html" class="btn-outline">See Plans</a>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- 4. MEALS PREVIEW -->
+      <section class="meals-preview" id="meals">
+        <h2>A Taste of What's on the Menu</h2>
+        <p class="section-sub">Fresh recipes, updated every week.</p>
 
         <div class="meal-grid">
-          <article class="meal-card">
-            <img src="img/eggplant.jpg" alt="Placeholder image of a meal">
-            <div class="meal-card-content">
+
+          <article class="meal-card" id="meal1">
+            <img src="img/eggplant.jpeg" alt="Super Eggplant Bowl">
+            <div class="meal-info">
               <h3>Super Eggplant Bowl</h3>
-              <p>A light and flavorful eggplant dish served with rice and vegetables.</p>
+              <p>Roasted eggplant, rice, and fresh vegetables.</p>
+              <div class="meal-tag-row">
+                <span class="tag">35 min</span>
+                <button class="select-btn" id="sel1">Select</button>
+              </div>
             </div>
           </article>
 
-          <article class="meal-card">
-            <img src="img/tofu.jpg" alt="Placeholder image of a meal">
-            <div class="meal-card-content">
+          <article class="meal-card" id="meal2">
+            <img src="img/tofurky.jpeg" alt="Tofurky Stir Fry">
+            <div class="meal-info">
               <h3>Tofurky Stir Fry</h3>
-              <p>A quick and savory option packed with colorful vegetables.</p>
+              <p>Savory tofu with colorful crisp vegetables.</p>
+              <div class="meal-tag-row">
+                <span class="tag">20 min</span>
+                <button class="select-btn" id="sel2">Select</button>
+              </div>
             </div>
           </article>
 
-          <article class="meal-card">
-            <img src="img/veggie_pasta.jpg" alt="Placeholder image of a meal">
-            <div class="meal-card-content">
+          <article class="meal-card" id="meal3">
+            <img src="img/pasta.jpeg" alt="Veggie Pasta">
+            <div class="meal-info">
               <h3>Veggie Pasta</h3>
-              <p>A hearty pasta dish with a fresh tomato sauce and seasonal greens.</p>
+              <p>Fresh tomato sauce with seasonal greens.</p>
+              <div class="meal-tag-row">
+                <span class="tag">25 min</span>
+                <button class="select-btn" id="sel3">Select</button>
+              </div>
             </div>
           </article>
+
+          <article class="meal-card" id="meal4">
+            <img src="img/panasian.jpeg" alt="Pan Asian Noodle Bowl">
+            <div class="meal-info">
+              <h3>Pan Asian Noodle Bowl</h3>
+              <p>A flavorful mix of Asian-inspired noodles, fresh herbs and vegetables.</p>
+              <div class="meal-tag-row">
+                <span class="tag">25 min</span>
+                <button class="select-btn" id="sel4">Select</button>
+              </div>
+            </div>
+          </article>
+
         </div>
 
-        <div class="gallery-button-wrapper">
-          <a href="ordering.html" class="primary-button">See All Dishes</a>
+        <a href="menu.html" class="btn-primary" id="menu-btn">View Full Menu</a>
+      </section>
+
+
+      <!-- 5. TRUST -->
+      <section class="trust" id="trust">
+        <div class="trust-inner">
+          <p class="quote">"I've tried every meal kit out there. VeggieTable is the only one where I actually use every ingredient and nothing goes to waste."</p>
+          <span class="author">— Sarah M., Toronto</span>
         </div>
       </section>
-    </main>
 
-    <footer class="site-footer">
-      <p>&copy; 2026 VeggieTable. All rights reserved.</p>
-    </footer>
 
-  <script>
+      <!-- 6. FINAL CTA -->
+      <section class="final-cta" id="final-cta">
+        <h2>Ready to eat better?</h2>
+        <p>Build your first plan in minutes. Cancel anytime.</p>
+        <a href="ordering.html" class="btn-primary large" id="cta-btn">Build Your Plan</a>
+      </section>
 
-  </script>
-  
-  </body>
 
-</html>
+      <!-- FOOTER -->
+      <footer class="footer">
+        <p>&copy; 2026 VeggieTable. All rights reserved.</p>
+      </footer>
+
+
+      <script>
+
+        // ---- 1. NAVBAR: add shadow on scroll ----
+        var navbar = document.querySelector("#navbar");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 10) {
+            navbar.style.boxShadow = "0 2px 10px rgba(0,0,0,0.08)";
+          } else {
+            navbar.style.boxShadow = "none";
+          }
+        });
+
+
+        // ---- 2. HERO BUTTON: change color on click ----
+        var heroBtn = document.querySelector("#hero-btn");
+
+        heroBtn.addEventListener("click", function () {
+          this.style.backgroundColor = "#40916c";
+        });
+
+
+        // ---- 7. CTA BUTTON: change color on click ----
+        var ctaBtn = document.querySelector("#cta-btn");
+
+        ctaBtn.addEventListener("click", function () {
+          this.style.backgroundColor = "#c96d2e";
+        });
+
+
+        // ---- 8. SELECT BUTTONS: button turns green when clicked, reset others ----
+        var sel1 = document.querySelector("#sel1");
+        var sel2 = document.querySelector("#sel2");
+        var sel3 = document.querySelector("#sel3");
+        var sel4 = document.querySelector("#sel4");
+
+        var allBtns = [sel1, sel2, sel3, sel4];
+
+        function selectDish() {
+          if (this.textContent === "Selected ✓") {
+            this.style.backgroundColor = "";
+            this.style.color = "";
+            this.textContent = "Select";
+          } else {
+            this.style.backgroundColor = "#2d6a4f";
+            this.style.color = "#fff";
+            this.textContent = "Selected ✓";
+          }
+        }
+
+        sel1.addEventListener("click", selectDish);
+        sel2.addEventListener("click", selectDish);
+        sel3.addEventListener("click", selectDish);
+        sel4.addEventListener("click", selectDish);
+
+      </script>
+
+      <style>
+        .select-btn {
+          padding: 6px 16px;
+          border: 2px solid #2d6a4f;
+          border-radius: 6px;
+          background: transparent;
+          color: #2d6a4f;
+          font-size: 0.85rem;
+          cursor: pointer;
+        }
+        .meal-tag-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 8px;
+        }
+        .meal-card {
+          display: flex;
+          flex-direction: column;
+        }
+        .meal-info {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+        }
+        .meal-info p {
+          flex: 1;
+        }
+      </style>
+
+    </body>
+    </html>

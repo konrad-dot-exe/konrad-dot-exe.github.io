@@ -14,12 +14,14 @@
       <header class="navbar" id="navbar">
         <a href="index.html" class="logo">🥕 VeggieTable</a>
         <nav>
-          <a href="index.html">Plans</a>
           <a href="menu.html">Menu</a>
+          <a href="orders.html">Orders</a>
           <a href="contact.html">Contact</a>
           <!-- Account Icon -->
-          <a href="login.html" class="account-icon" title="Sign In">
-            <i class="fa-solid fa-user"></i>
+          <a href="login.html" class="account-icon" title="Sign In" id="account-link">
+            <span class="account-display">
+              <i class="fa-solid fa-user"></i>
+            </span>
           </a>
           <!-- Cart Icon -->
           <a href="checkout.html" class="cart-icon" title="Cart">
@@ -35,7 +37,7 @@
           <h1>Fresh vegetarian meals, <em>your way.</em></h1>
           <p>VeggieTable sends you the ingredients and recipes to cook simple
              plant-based meals at home, delivered on your schedule, no guesswork needed.</p>
-          <a href="ordering.html" class="btn-primary" id="hero-btn">Start Planning</a>
+          <a href="scheduling.html" class="btn-primary" id="hero-btn">Start Planning</a>
         </div>
         <div class="hero-image">
           <img src="img/landing.jpeg" alt="A fresh vegetarian meal" id="hero-img">
@@ -238,6 +240,49 @@
         sel2.addEventListener("click", selectDish);
         sel3.addEventListener("click", selectDish);
         sel4.addEventListener("click", selectDish);
+
+        // ACCOUNT BADGE
+
+        function updateAccountBadge() {
+        var accountDisplay = document.querySelector(".account-display");
+        var accountLink = document.getElementById("account-link");
+        var savedName = localStorage.getItem("veggieName");
+
+        if (!accountDisplay || !accountLink) return;
+
+        if (savedName && savedName.trim() !== "") {
+          var firstLetter = savedName.trim().charAt(0).toUpperCase();
+
+          accountDisplay.innerHTML =
+            '<span class="account-badge">' + firstLetter + '</span>';
+
+          accountLink.href = "#";
+          accountLink.title = "Sign Out";
+
+          accountLink.onclick = function (e) {
+            e.preventDefault();
+
+            var confirmLogout = confirm("Sign out of VeggieTable?");
+
+            if (confirmLogout) {
+              localStorage.removeItem("veggieName");
+              localStorage.removeItem("veggieEmail");
+              localStorage.removeItem("veggiePassword");
+
+              window.location.href = "index.html";
+            }
+          };
+        } else {
+          accountDisplay.innerHTML =
+            '<i class="fa-solid fa-user"></i>';
+
+          accountLink.href = "login.html";
+          accountLink.title = "Sign In";
+          accountLink.onclick = null;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", updateAccountBadge);
 
       </script>
 

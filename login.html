@@ -226,12 +226,14 @@
       <header class="navbar" id="navbar">
         <a href="index.html" class="logo">🥕 VeggieTable</a>
         <nav>
-          <a href="index.html">Plans</a>
           <a href="menu.html">Menu</a>
+          <a href="orders.html">Orders</a>
           <a href="contact.html">Contact</a>
           <!-- Account Icon -->
-          <a href="login.html" class="account-icon" title="Sign In">
-            <i class="fa-solid fa-user"></i>
+          <a href="login.html" class="account-icon" title="Sign In" id="account-link">
+            <span class="account-display">
+              <i class="fa-solid fa-user"></i>
+            </span>
           </a>
           <!-- Cart Icon -->
           <a href="checkout.html" class="cart-icon" title="Cart">
@@ -341,14 +343,14 @@
       });
 
       // ---- SHOW NAME IN NAVBAR IF ALREADY SIGNED UP ----
-      var accountLink = document.querySelector("#account-link");
-      var savedName = localStorage.getItem("veggieName");
+      // var accountLink = document.querySelector("#account-link");
+      // var savedName = localStorage.getItem("veggieName");
 
-      if (savedName !== null) {
-        accountLink.textContent = "Hi, " + savedName + "!";
-        accountLink.style.color = "#2d6a4f";
-        accountLink.style.fontWeight = "bold";
-      }
+      // if (savedName !== null) {
+      //   accountLink.textContent = "Hi, " + savedName + "!";
+      //   accountLink.style.color = "#2d6a4f";
+      //   accountLink.style.fontWeight = "bold";
+      // }
 
       // ---- TAB SWITCHING ----
       var tabLogin = document.querySelector("#tab-login");
@@ -385,16 +387,14 @@
       var loginBtn = document.querySelector("#login-btn");
 
       loginBtn.addEventListener("click", function () {
-        var email = document.querySelector("#login-email").value;
-        var password = document.querySelector("#login-password").value;
 
-        if (email === "" || password === "") {
-          alert("Please fill in your email and password.");
-          return;
-        }
+        localStorage.setItem("veggieName", "Alaa");
 
         panelLogin.classList.remove("active");
-        document.querySelector("#welcome-name").textContent = "Welcome back! 🌱";
+  
+        document.querySelector("#welcome-name").textContent =
+          "Welcome back, " + "Alaa" + "! 🌱";
+   
         document.querySelector("#welcome-msg").style.display = "block";
       });
 
@@ -412,6 +412,8 @@
         }
 
         localStorage.setItem("veggieName", name);
+        localStorage.setItem("veggieEmail", email);
+        localStorage.setItem("veggiePassword", password);
 
         panelSignup.classList.remove("active");
         document.querySelector("#welcome-name").textContent = "Welcome, " + name + "! 🌱";

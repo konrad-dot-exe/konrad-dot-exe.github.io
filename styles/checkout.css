@@ -1,6 +1,3 @@
-
-
-
   /* ========================
      MAIN CHECKOUT AREA
      ======================== */
@@ -129,11 +126,39 @@
 
   #messagepaymentmethod {
     font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-    min-height: 1.2em;
+    margin-bottom: 0.5rem;
+  
   }
 
   #p8 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  #p9 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  #p10 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  #p11 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  #p12 {
     font-size: 1rem;
     font-weight: bold;
     color: var(--text-dark);
@@ -154,6 +179,24 @@
   }
 
   input[type="number"]:focus {
+    outline: none;
+    border-color: var(--green-dark);
+  }
+
+  input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 1.5px solid var(--green-light);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: Georgia, serif;
+    background-color: var(--white);
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+  }
+
+  input[type="text"]:focus {
     outline: none;
     border-color: var(--green-dark);
   }

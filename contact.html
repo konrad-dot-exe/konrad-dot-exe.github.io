@@ -200,7 +200,7 @@
 
       const formFeedback = document.querySelector(".form-feedback");
 
-      // regex patterns
+      // regex validation patterns
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       const phonePattern = /^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
 
@@ -208,8 +208,13 @@
       const successModal = document.getElementById("success-modal");
       const closeModalBtn = document.getElementById("close-modal");
 
-      //-------- functions -----------------//
+      //-------- functions -----------------------------------------------------------------------------------//
 
+      // --------------------------------------------------
+      // Toggle visible form fields based on inquiry type
+      // Customer -> show customer-specific dropdown
+      // Business -> show company / job fields
+      // --------------------------------------------------
       function updateForm() {
         const selectedType = document.querySelector('input[name="contactType"]:checked').value;
 
@@ -221,10 +226,6 @@
           // Hide business fields
           businessFields.forEach(el => el.classList.add("hidden"));
 
-          // Optional: toggle required fields
-          // setRequired(customerFields, true);
-          // setRequired(businessFields, false);
-
         } else if (selectedType === "business") {
           // Show business fields
           businessFields.forEach(el => el.classList.remove("hidden"));
@@ -232,25 +233,7 @@
           // Hide customer fields
           customerFields.forEach(el => el.classList.add("hidden"));
 
-          // Optional: toggle required fields
-          // setRequired(businessFields, true);
-          // setRequired(customerFields, false);
         }
-      }
-
-      // set required fields
-      function setRequired(fieldGroups, isRequired) {
-        fieldGroups.forEach(group => {
-          const inputs = group.querySelectorAll("input, select, textarea");
-
-          inputs.forEach(input => {
-            if (isRequired) {
-              input.setAttribute("required", "true");
-            } else {
-              input.removeAttribute("required");
-            }
-          });
-        });
       }
 
       //----- Event listeners---------------------//
@@ -260,7 +243,13 @@
         radio.addEventListener("change", updateForm);
       });
 
-      // submit form
+      // --------------------------------------------------
+      // FORM SUBMISSION + VALIDATION
+      // Prevent default submission
+      // Check required fields
+      // Validate email + phone formats
+      // On success -> show confirmation modal + reset form
+      // --------------------------------------------------
       contactForm.addEventListener("submit", function (e) {
         e.preventDefault();
         
@@ -271,7 +260,7 @@
 
         formFeedback.style.color = 'red';
 
-        // check empty required fields
+        // 1. Check missing required fields
         if (
           nameInputField.value.trim() === '' || 
           emailInputField.value.trim() === '' || 
@@ -280,15 +269,15 @@
         ){
           formFeedback.textContent = "Please fill out all required fields.";
         }
-        // check valid email 
+        // 2. Validate email format
         else if (!emailPattern.test(emailInputField.value.trim())) {
             formFeedback.textContent = "Please enter a valid email.";
         }
-        // check valid phone number
+        // 3. Validate phone number format
         else if (!phonePattern.test(phoneInputField.value.trim())) {
             formFeedback.textContent = "Please enter a valid phone number.";
         }
-        // success! 
+        // 4. Success path -> show modal + clear form
         else
         {
           successModal.classList.remove("hidden");
@@ -305,8 +294,6 @@
 
       // Run once on page load
       updateForm();
-
-      
 
     });
 

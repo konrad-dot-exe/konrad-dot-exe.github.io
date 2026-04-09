@@ -148,21 +148,22 @@
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
   }
-
-  .btn-outline {
+    .btn-secondary {
     display: inline-block;
     background-color: transparent;
     color: var(--green-dark);
-    padding: 0.6rem 1.4rem;
+    border: 1px solid var(--green-dark);
+    text-decoration: none;
+    padding: 0.9rem 1.5rem;
     border-radius: 8px;
-    border: 2px solid var(--green-dark);
-    font-size: 0.9rem;
-    margin-top: 1rem;
-    transition: background-color 0.2s;
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
-  .btn-outline:hover {
-    background-color: var(--green-pale);
+  .btn-secondary:hover {
+    color: var(--green-light);
+    border: 1px solid var(--green-light);
   }
 
 /* ========================

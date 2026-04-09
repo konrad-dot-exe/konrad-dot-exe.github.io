@@ -22,7 +22,7 @@
             </span>
           </a>
           <!-- Cart Icon -->
-          <a href="checkout.html" class="cart-icon" title="Cart">
+          <a href="scheduling.html" class="cart-icon" title="Cart">
             <i class="fa-solid fa-cart-shopping"></i>
           </a>
         </nav>
@@ -98,7 +98,7 @@
     // SHIPPING ANIMATION VARIABLES
     var container_media=document.querySelector("#container_media")
     var shipping_img=document.querySelector("#shipping_img");
-    const videoSrc="scheduling_assets/DG8002_MapAnim_1.mp4"
+    const videoSrc="img/DG8002_MapAnim_1.mp4"
     const finalImgSrc="DG8002_MapAnim_Time_114.png"
 
     // SHIPPING CONFIRMATION VARIABLES
@@ -199,6 +199,50 @@
     function payoff(){
       this.style.backgroundColor="#e07b39";
     }
+
+    // ACCOUNT BADGE
+
+        function updateAccountBadge() {
+        var accountDisplay = document.querySelector(".account-display");
+        var accountLink = document.getElementById("account-link");
+        var savedName = localStorage.getItem("veggieName");
+
+        if (!accountDisplay || !accountLink) return;
+
+        if (savedName && savedName.trim() !== "") {
+          var firstLetter = savedName.trim().charAt(0).toUpperCase();
+
+          accountDisplay.innerHTML =
+            '<span class="account-badge">' + firstLetter + '</span>';
+
+          accountLink.href = "#";
+          accountLink.title = "Sign Out";
+
+          accountLink.onclick = function (e) {
+            e.preventDefault();
+
+            var confirmLogout = confirm("Sign out of VeggieTable?");
+
+            if (confirmLogout) {
+              localStorage.removeItem("veggieName");
+              localStorage.removeItem("veggieEmail");
+              localStorage.removeItem("veggiePassword");
+
+              window.location.href = "index.html";
+            }
+          };
+        } else {
+          accountDisplay.innerHTML =
+            '<i class="fa-solid fa-user"></i>';
+
+          accountLink.href = "login.html";
+          accountLink.title = "Sign In";
+          accountLink.onclick = null;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", updateAccountBadge);
+
   </script>
   
   </body>

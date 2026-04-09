@@ -30,7 +30,7 @@
             </span>
           </a>
           <!-- Cart Icon -->
-          <a href="scheduling.html" class="cart-icon" title="Cart">
+          <a href="checkout.html" class="cart-icon" title="Cart">
             <i class="fa-solid fa-cart-shopping"></i>
           </a>
         </nav>
@@ -196,6 +196,7 @@
 
   </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
       <p>&copy; 2026 VeggieTable. All rights reserved.</p>
     </footer>
@@ -252,7 +253,7 @@
     var viewAllOrdersLink = document.querySelector("#viewAllOrdersLink");
 
     function showNotShipped(event) {
-      event.preventDefault(); 
+      event.preventDefault(); // Prevent page jump
       ordersTab.classList.remove("active");
       notShippedTab.classList.add("active");
       ordersContent.style.display = "none";

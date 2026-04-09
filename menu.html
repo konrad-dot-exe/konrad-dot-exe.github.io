@@ -25,7 +25,7 @@
             </span>
           </a>
           <!-- Cart Icon -->
-          <a href="checkout.html" class="cart-icon" title="Cart">
+          <a href="scheduling.html" class="cart-icon" title="Cart">
             <i class="fa-solid fa-cart-shopping"></i>
           </a>
         </nav>
@@ -231,6 +231,27 @@
     </footer>
 
 
+    <!-- CONFIRMATION MODAL -->
+
+      <div class="modal-overlay hidden" id="cart-success-modal">
+        <div class="modifier-modal success-modal">
+          <button class="close-modal" id="close-cart-success-modal" type="button">&times;</button>
+
+          <h3>Added to Your Cart</h3>
+          <p class="success-message">
+            <span id="cart-success-meal-name">Meal</span> has been added successfully.
+          </p>
+
+          <div class="success-actions">
+            <a href="scheduling.html" class="btn-primary">Go to Scheduling</a>
+            <button class="btn-secondary" id="continue-shopping-btn" type="button">
+              Continue Shopping
+            </button>
+          </div>
+        </div>
+      </div>
+
+
     <script>
 
       // ---- NAVBAR SCROLL SHADOW ----
@@ -263,6 +284,13 @@
 
       var activeMeal = null;
       var activeQty = 1;
+
+      // ---- CONFIRMATION MODAL ----
+
+      var cartSuccessModal = document.querySelector("#cart-success-modal");
+      var closeCartSuccessModalBtn = document.querySelector("#close-cart-success-modal");
+      var continueShoppingBtn = document.querySelector("#continue-shopping-btn");
+      var cartSuccessMealName = document.querySelector("#cart-success-meal-name");
 
       function getCart() {
         return JSON.parse(localStorage.getItem("veggieTableCart")) || [];
@@ -365,8 +393,68 @@
         });
         saveCart(cart);
         modal.classList.add("hidden");
-        alert(activeMeal.name + " added to cart!");
+        cartSuccessMealName.textContent = activeMeal.name;
+        cartSuccessModal.classList.remove("hidden");
       });
+
+      // CONFIRMATION MODAL
+
+      closeCartSuccessModalBtn.addEventListener("click", function () {
+        cartSuccessModal.classList.add("hidden");
+      });
+
+      continueShoppingBtn.addEventListener("click", function () {
+        cartSuccessModal.classList.add("hidden");
+      });
+
+      cartSuccessModal.addEventListener("click", function (e) {
+        if (e.target === cartSuccessModal) {
+          cartSuccessModal.classList.add("hidden");
+        }
+      });  
+
+      // ACCOUNT BADGE
+
+        function updateAccountBadge() {
+        var accountDisplay = document.querySelector(".account-display");
+        var accountLink = document.getElementById("account-link");
+        var savedName = localStorage.getItem("veggieName");
+
+        if (!accountDisplay || !accountLink) return;
+
+        if (savedName && savedName.trim() !== "") {
+          var firstLetter = savedName.trim().charAt(0).toUpperCase();
+
+          accountDisplay.innerHTML =
+            '<span class="account-badge">' + firstLetter + '</span>';
+
+          accountLink.href = "#";
+          accountLink.title = "Sign Out";
+
+          accountLink.onclick = function (e) {
+            e.preventDefault();
+
+            var confirmLogout = confirm("Sign out of VeggieTable?");
+
+            if (confirmLogout) {
+              localStorage.removeItem("veggieName");
+              localStorage.removeItem("veggieEmail");
+              localStorage.removeItem("veggiePassword");
+
+              window.location.href = "index.html";
+            }
+          };
+        } else {
+          accountDisplay.innerHTML =
+            '<i class="fa-solid fa-user"></i>';
+
+          accountLink.href = "login.html";
+          accountLink.title = "Sign In";
+          accountLink.onclick = null;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", updateAccountBadge);
 
     </script>
 

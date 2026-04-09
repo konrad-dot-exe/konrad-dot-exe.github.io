@@ -236,7 +236,7 @@
             </span>
           </a>
           <!-- Cart Icon -->
-          <a href="checkout.html" class="cart-icon" title="Cart">
+          <a href="scheduling.html" class="cart-icon" title="Cart">
             <i class="fa-solid fa-cart-shopping"></i>
           </a>
         </nav>
@@ -388,6 +388,14 @@
 
       loginBtn.addEventListener("click", function () {
 
+        var email = document.querySelector("#login-email").value;
+        var password = document.querySelector("#login-password").value; 
+
+        if (email === "" || password === "") {
+          alert("Please fill out all fields.");
+          return;
+        }
+
         localStorage.setItem("veggieName", "Alaa");
 
         panelLogin.classList.remove("active");
@@ -423,6 +431,49 @@
         accountLink.style.color = "#2d6a4f";
         accountLink.style.fontWeight = "bold";
       });
+
+      // ACCOUNT BADGE
+
+        function updateAccountBadge() {
+        var accountDisplay = document.querySelector(".account-display");
+        var accountLink = document.getElementById("account-link");
+        var savedName = localStorage.getItem("veggieName");
+
+        if (!accountDisplay || !accountLink) return;
+
+        if (savedName && savedName.trim() !== "") {
+          var firstLetter = savedName.trim().charAt(0).toUpperCase();
+
+          accountDisplay.innerHTML =
+            '<span class="account-badge">' + firstLetter + '</span>';
+
+          accountLink.href = "#";
+          accountLink.title = "Sign Out";
+
+          accountLink.onclick = function (e) {
+            e.preventDefault();
+
+            var confirmLogout = confirm("Sign out of VeggieTable?");
+
+            if (confirmLogout) {
+              localStorage.removeItem("veggieName");
+              localStorage.removeItem("veggieEmail");
+              localStorage.removeItem("veggiePassword");
+
+              window.location.href = "index.html";
+            }
+          };
+        } else {
+          accountDisplay.innerHTML =
+            '<i class="fa-solid fa-user"></i>';
+
+          accountLink.href = "login.html";
+          accountLink.title = "Sign In";
+          accountLink.onclick = null;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", updateAccountBadge);
 
     </script>
 
